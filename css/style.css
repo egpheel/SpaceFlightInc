@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2:300,400,700&display=swap");
+
+body, html {width: 100%; min-width: 900px; height: 100%; background-image: url('../img/m-bg.gif'); image-rendering: pixelated; margin: 0; padding: 0; font-family: "Exo 2", sans-serif; color: rgba(255, 255, 255, 1.00); scroll-behavior: smooth; cursor: url(../img/cursor.png), auto; overflow-x: hidden;}
+
+body:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: url('../img/blink.png')
+    repeat top center;
+  z-index: 1;
+  animation: starsblink 400s linear infinite;
+}
+
+@keyframes starsblink {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+a {text-decoration: none;}
+
+* {position: relative; float: left; box-sizing: border-box; tap-highlight-color:  rgba(255, 255, 255, 0);}
+
+.h-i {display: none; width: 0; height: 0; opacity: 0.00;}
+
+.ms-c {width: 100vw; height: 100vh; overflow: hidden; z-index: 5; perspective: 200px;}
+
+.ic {width: 100%; height: 100%; background-color: rgba(20, 60, 100, 0.25); backdrop-filter: blur(2px); padding: 20px; border-radius: 5px;}
+
+.mh-s {width: 100%; height: 100px; padding: 40px 40px 5px 40px;}
+	.mh-s .ic {transform: translateZ(0px) rotateX(-2deg);}
+		.mh-s .ic .lbl {margin: 0 20px 0 0;}
+		.mh-s .ic .lbl span {color: rgba(100, 140, 250, 1.00);}
+		.mh-s .ic .lbl span > span {display: inline-block; margin: 0 0 0 10px; position: initial; float: initial; font-weight: 700; color: rgba(255, 255, 255, 1.00);}
+
+.ns-s {width: 400px; height: calc(100% - 100px); padding: 5px 40px 40px 45px;}
+	.ns-s .ic {perspective: 200px;}
+	.trav-btn {width: 100%; height: 50px; background-color: rgba(40, 80, 200, 1.00); border-radius: 3px; margin: 0 0 20px 0; line-height: 45px; text-align: center; box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.25); overflow: hidden; transition: all 0.3s;  cursor: url(../img/cursor-pointer.png), auto;}
+	.trav-btn:before, .trav-btn:after {content: ''; width: 50%; height: 100%; background-color: rgba(255, 255, 255, 0.05); position: absolute; left: 0px; top: 0px; box-shadow: inset -1px 0 0 0 rgba(255, 255, 255, 0.00), 0 0 5px 0 rgba(0, 0, 0, 0.00); transition: all 0.3s;}
+	.trav-btn:after {left: initial; right: 0px; box-shadow: inset 1px 0 0 0 rgba(255, 255, 255, 0.00), 0 0 5px 0 rgba(0, 0, 0, 0.00);}
+	.trav-btn:hover {text-shadow: 0 1px 10px rgba(255, 255, 255, 0.75);}
+	.trav-btn:hover:before {left: -60%; box-shadow: inset -1px 0 0 0 rgba(255, 255, 255, 0.50), 0 0 5px 0 rgba(0, 0, 0, 1.00);}
+	.trav-btn:hover:after {left: initial; right: -60%; box-shadow: inset 1px 0 0 0 rgba(255, 255, 255, 0.50), 0 0 5px 0 rgba(0, 0, 0, 1.00);}
+
+	input[type=checkbox]:checked + .trav-btn, .trav-btn:active {background-color: rgba(20, 40, 100, 1.00); line-height: 49px; animation: TravBtnAnim 2s infinite;}
+
+	@keyframes TravBtnAnim {
+	  0%{text-shadow: 0 4px 15px rgba(80, 120, 240, 0.00); box-shadow: inset 0 0 20px 0 rgba(80, 120, 240, 0.00), inset 0 4px 0 1px rgba(0, 0, 0, 0.25), 0 0 10px 0 rgba(40, 80, 200, 0.00);}
+	  50%{text-shadow: 0 4px 15px rgba(80, 120, 240, 1.00); box-shadow: inset 0 0 20px 0 rgba(80, 120, 240, 1.00), inset 0 4px 0 1px rgba(0, 0, 0, 0.25), 0 0 10px 0 rgba(40, 80, 200, 1.00);}
+	  100%{text-shadow: 0 4px 15px rgba(80, 120, 240, 0.00); box-shadow: inset 0 0 20px 0 rgba(80, 120, 240, 0.00), inset 0 4px 0 1px rgba(0, 0, 0, 0.25), 0 0 10px 0 rgba(40, 80, 200, 0.00);}
+	}
+
+	.trav-c {width: 100%; height: 0%; background-color: rgba(10, 10, 50, 0.75); backdrop-filter: blur(2px); padding: 0 20px 0 20px; border-radius: 5px; position: absolute; left: 0; top: 90px; transform: translateY(100%) translateZ(-50px) rotateX(-90deg); opacity: 0.00; overflow: hidden; transition: all 1s, height 0.3s; z-index: 10;}
+		input[type=checkbox]:checked ~ .trav-c {height: calc(100% - 90px); padding: 20px; transform: translateY(0) translateZ(0) rotateX(0deg); opacity: 1.00; overflow-y: auto; transition: all 0.3s, height 1s;}
+ 	
+
+
+ 	.dest-c {width: 100%; height: 120px; margin: 20px 0 0 0; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1.00);}
+ 	.dest-c span {width: 100%}	
+
+ 	.ns-s .ic .lbl {width: 100%;}
+ 	.ns-s .ic .lbl span {color: rgba(100, 140, 250, 1.00);}
+	.ns-s .ic .lbl span > span {display: inline-block; margin: 0 0 0 10px; position: initial; float: initial; font-weight: 700; color: rgba(255, 255, 255, 1.00);}
+
+
+
+::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0.0);
+  height: 5px;
+  width: 10px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar:disabled {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  height: 5px;
+  width: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px rgba(40, 80, 200, 0.75);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(40, 80, 200, 1.00);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(180, 180, 180, 0.2);
+}
